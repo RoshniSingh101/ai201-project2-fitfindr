@@ -60,6 +60,11 @@ def search_listings(
         id, title, description, category, style_tags (list), size,
         condition, price (float), colors (list), brand, platform
     """
+
+    # added edge case if description is empty
+    if not description:
+        return []
+
     listings = load_listings()
 
     # Apply hard filters first
